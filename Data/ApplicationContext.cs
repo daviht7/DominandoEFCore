@@ -14,9 +14,9 @@ namespace Curso.Data
     {
       const string strConnection = "Data source=LAPTOP-A5UTA3O1\\SQLEXPRESS01;Initial Catalog=C002;Integrated Security=true;pooling=true";
       optionsBuilder
-      .UseSqlServer(strConnection)
-      .EnableSensitiveDataLogging()
-          .LogTo(Console.WriteLine, LogLevel.Information);
+      .UseSqlServer(strConnection);
+      //.EnableSensitiveDataLogging()
+      //    .LogTo(Console.WriteLine, LogLevel.Information);
     }
 
   }
