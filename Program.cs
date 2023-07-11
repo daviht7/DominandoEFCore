@@ -21,6 +21,22 @@ namespace DominandoEFCore
       GerenciarEstadoConexao(true);
     }
 
+    static void ExecuteSQL()
+    {
+
+      using var db = new ApplicationContext();
+
+      using var cmd = db.Database.GetDbConnection().CreateCommand();
+      cmd.CommandText = "SELECT 1";
+      cmd.ExecuteNonQuery();
+
+      var descricao = "teste";
+      db.Database.ExecuteSqlRaw("update departamentos set descricao ={0} where id=1", descricao);
+
+      db.Database.ExecuteSqlInterpolated($"update departamentos set descricao ={descricao} where id=1");
+
+    }
+
     static void HealthCheckBancoDeDados()
     {
       using var db = new ApplicationContext();
