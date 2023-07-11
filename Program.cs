@@ -21,7 +21,8 @@ namespace DominandoEFCore
       //GerenciarEstadoConexao(true);
       //MigracoesPendentes();
       //AplicarMigracaoTempoExecucao();
-      TodasMigracoes();
+      //TodasMigracoes();
+      ScriptGeralBancoDeDados();
     }
 
     static void AplicarMigracaoTempoExecucao()
@@ -29,6 +30,15 @@ namespace DominandoEFCore
 
       using var db = new ApplicationContext();
       db.Database.Migrate();
+
+    }
+
+    static void ScriptGeralBancoDeDados()
+    {
+      using var db = new ApplicationContext();
+      var script = db.Database.GenerateCreateScript();
+
+      Console.WriteLine(script);
 
     }
 
