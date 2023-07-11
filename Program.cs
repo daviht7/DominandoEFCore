@@ -20,7 +20,8 @@ namespace DominandoEFCore
       //_count = 0;
       //GerenciarEstadoConexao(true);
       //MigracoesPendentes();
-      AplicarMigracaoTempoExecucao();
+      //AplicarMigracaoTempoExecucao();
+      TodasMigracoes();
     }
 
     static void AplicarMigracaoTempoExecucao()
@@ -28,6 +29,22 @@ namespace DominandoEFCore
 
       using var db = new ApplicationContext();
       db.Database.Migrate();
+
+    }
+
+    static void TodasMigracoes()
+    {
+
+      using var db = new ApplicationContext();
+
+      var Migracoes = db.Database.GetMigrations();
+
+      Console.WriteLine($"Total {Migracoes.Count()}");
+
+      foreach (var migracao in Migracoes)
+      {
+        Console.WriteLine($"nome {migracao}");
+      }
 
     }
 
