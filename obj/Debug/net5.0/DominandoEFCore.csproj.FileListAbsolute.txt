@@ -65,3 +65,5 @@ C:\Fonte\CSharp\DominandoEF\Curso\obj\Debug\net5.0\DominandoEFCore.dll
 C:\Fonte\CSharp\DominandoEF\Curso\obj\Debug\net5.0\ref\DominandoEFCore.dll
 C:\Fonte\CSharp\DominandoEF\Curso\obj\Debug\net5.0\DominandoEFCore.pdb
 C:\Fonte\CSharp\DominandoEF\Curso\obj\Debug\net5.0\DominandoEFCore.genruntimeconfig.cache
+C:\Fonte\CSharp\DominandoEF\Curso\bin\Debug\net5.0\Humanizer.dll
+C:\Fonte\CSharp\DominandoEF\Curso\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

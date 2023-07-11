@@ -15,10 +15,27 @@ namespace DominandoEFCore
       //EnsureCreatedAndDeleted();
       //GapDoEnsureCreated();
       //HealthCheckBancoDeDados();
-      _count = 0;
-      GerenciarEstadoConexao(false);
-      _count = 0;
-      GerenciarEstadoConexao(true);
+      //_count = 0;
+      //GerenciarEstadoConexao(false);
+      //_count = 0;
+      //GerenciarEstadoConexao(true);
+      MigracoesPendentes();
+    }
+
+    static void MigracoesPendentes()
+    {
+
+      using var db = new ApplicationContext();
+
+      var MigracoesPendentes = db.Database.GetPendingMigrations();
+
+      Console.WriteLine($"Total {MigracoesPendentes.Count()}");
+
+      foreach (var migracao in MigracoesPendentes)
+      {
+
+      }
+
     }
 
     static void ExecuteSQL()
