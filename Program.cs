@@ -19,7 +19,16 @@ namespace DominandoEFCore
       //GerenciarEstadoConexao(false);
       //_count = 0;
       //GerenciarEstadoConexao(true);
-      MigracoesPendentes();
+      //MigracoesPendentes();
+      AplicarMigracaoTempoExecucao();
+    }
+
+    static void AplicarMigracaoTempoExecucao()
+    {
+
+      using var db = new ApplicationContext();
+      db.Database.Migrate();
+
     }
 
     static void MigracoesPendentes()
